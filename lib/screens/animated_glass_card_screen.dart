@@ -1,5 +1,5 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../widgets/glass_card.dart';
 
 class AnimatedGlassCardScreen extends StatefulWidget {
   const AnimatedGlassCardScreen({super.key});
@@ -52,45 +52,22 @@ class _AnimatedGlassCardScreenState extends State<AnimatedGlassCardScreen>
                 child: child,
               );
             },
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(24),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                child: Container(
-                  width: 320,
-                  height: 220,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.15),
-                    borderRadius: BorderRadius.circular(24),
-                    border: Border.all(
-                      color: Colors.white.withOpacity(0.3),
-                      width: 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.white.withOpacity(0.05),
-                        blurRadius: 8,
-                        spreadRadius: 2,
+            child: GlassCard(
+              child: const Center(
+                child: Text(
+                  'Glazr',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.2,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black26,
+                        blurRadius: 6,
+                        offset: Offset(2, 2),
                       ),
                     ],
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Glazr',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.2,
-                        shadows: [
-                          Shadow(
-                            color: Colors.black26,
-                            blurRadius: 6,
-                            offset: Offset(2, 2),
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
                 ),
               ),
