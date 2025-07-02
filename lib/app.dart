@@ -8,9 +8,9 @@ class GlazrApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Glazr',
+      title: 'Glazr - Glass UI',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
+      theme: AppTheme.darkTheme, // Fixed theme naming
       home: const AnimatedGlassCardScreen(),
     );
   }
